@@ -3,30 +3,44 @@ import WebKit
 
 final class SVGLoader {
     let html: String
-    init?(named: String, bundle: Bundle) {
+    let svg: String
+    let css: String
+
+    struct Style {
+        var rawCSS: String
+        static var `default`: Style {
+            return Style(rawCSS: """
+            svg {
+                width: 100vw;
+                height: 100vh;
+                -webkit-animation: DASH 5s;
+            }
+            """)
+        }
+    }
+
+    init?(named: String, style: Style, bundle: Bundle) {
         guard
             let url = bundle.url(forResource: named, withExtension: "svg"),
             let data = try? Data(contentsOf: url),
-            let source = String(data: data, encoding: .utf8) else { return nil }
+            let svg = String(data: data, encoding: .utf8) else { return nil }
 
+        self.svg = svg
+        self.css = style.rawCSS
         self.html = """
         <!doctype html>
         <html>
 
         <head>
-            <title>Document</title>
-            <link rel="stylesheet" type="text/css" href="./loading-text.css">
+            <meta charset="utf-8"/>
         </head>
 
         <body>
-            \(source)
+            \(self.svg)
         </body>
 
         <style>
-        svg {
-        width: 100vw;
-        height: 100vh;
-        }
+            \(self.css)
         </style>
 
         </html>

@@ -3,8 +3,8 @@ import WebKit
 final class SVGView: WKWebView {
     private let loader: SVGLoader
 
-    init(named: String, bundle: Bundle = .main) {
-        guard let loader = SVGLoader(named: named, bundle: bundle) else { fatalError("Image not found.") }
+    init(named: String, style: SVGLoader.Style = .default, bundle: Bundle = .main) {
+        guard let loader = SVGLoader(named: named, style: style, bundle: bundle) else { fatalError("Image not found.") }
         self.loader = loader
         super.init(frame: .zero, configuration: .init())
     }
@@ -16,6 +16,7 @@ final class SVGView: WKWebView {
     func load() {
         loadHTMLString(loader.html, baseURL: nil)
         scrollView.isScrollEnabled = false
+        isUserInteractionEnabled = false
     }
 
     func isAnimate(result: @escaping (Bool?) -> Void) {
