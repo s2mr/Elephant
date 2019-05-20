@@ -3,9 +3,9 @@ import WebKit
 
 final class SVGLoader {
     let html: String
-    init?(svgName: String) {
+    init?(named: String, bundle: Bundle) {
         guard
-            let url = Bundle.main.url(forResource: svgName, withExtension: "svg"),
+            let url = bundle.url(forResource: named, withExtension: "svg"),
             let data = try? Data(contentsOf: url),
             let source = String(data: data, encoding: .utf8) else { return nil }
 
@@ -22,9 +22,14 @@ final class SVGLoader {
             \(source)
         </body>
 
+        <style>
+        svg {
+        width: 100vw;
+        height: 100vh;
+        }
+        </style>
+
         </html>
-       """
-
-
+        """
     }
 }
