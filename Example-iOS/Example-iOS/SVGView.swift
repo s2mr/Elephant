@@ -27,15 +27,19 @@ final class SVGView: WKWebView {
         }
     }
 
-    func startAnimation() {
+    func startAnimation(result: ((Error?) -> Void)? = nil) {
         DispatchQueue.main.async { [weak self] in
-            self?.evaluateJavaScript("document.getElementsByTagName('svg')[0].unpauseAnimations()")
+            self?.evaluateJavaScript("document.getElementsByTagName('svg')[0].unpauseAnimations()") { _ , error in
+                result?(error)
+            }
         }
     }
 
-    func stopAnimation() {
+    func stopAnimation(result: ((Error?) -> Void)? = nil) {
         DispatchQueue.main.async { [weak self] in
-            self?.evaluateJavaScript("document.getElementsByTagName('svg')[0].pauseAnimations()")
+            self?.evaluateJavaScript("document.getElementsByTagName('svg')[0].pauseAnimations()") { _ , error in
+                result?(error)
+            }
         }
     }
 }
