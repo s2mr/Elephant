@@ -1,20 +1,18 @@
-//
-//  ViewController.swift
-//  Example-iOS
-//
-//  Created by 下村 一将 on 2019/05/20.
-//  Copyright © 2019 kazuringo. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        guard let svgView = SVGView.init(svgName: "image") else { return }
+        view.addSubview(svgView)
+        svgView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            svgView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            svgView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            svgView.widthAnchor.constraint(equalToConstant: 300),
+            svgView.heightAnchor.constraint(equalToConstant: 300),
+            ])
+        svgView.load()
     }
-
-
 }
-
