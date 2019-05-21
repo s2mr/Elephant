@@ -11,7 +11,6 @@ final class JavaScriptExecutor: NSObject {
         case stopSVGAnimation
         case startCSSAnimation
         case stopCSSAnimation
-        case insertCSS(rawCSS: String)
         case isAnimateSVG
         case isAnimateCSS
 
@@ -21,11 +20,6 @@ final class JavaScriptExecutor: NSObject {
             case .stopSVGAnimation: return "document.getElementsByTagName('svg')[0].pauseAnimations();"
             case .startCSSAnimation: return "document.body.style.setProperty('--style', 'running');"
             case .stopCSSAnimation: return "document.body.style.setProperty('--style', 'paused');"
-            case .insertCSS(let rawCSS): return """
-                var style = document.createElement('style');
-                style.innerHTML = `\(JavaScriptExecutor.declarationCSS + JavaScriptExecutor.resetCSS + rawCSS)`;
-                document.head.appendChild(style);
-            """
             case .isAnimateSVG: return "document.getElementsByTagName('svg')[0].animationsPaused();"
             case .isAnimateCSS: return """
                 var svg = document.body.getElementsByTagName("svg")[0];
@@ -39,7 +33,6 @@ final class JavaScriptExecutor: NSObject {
         self.webView = webView
         self.insertCSSHandler = insertCSSHandler
         super.init()
-        webView.navigationDelegate = self
     }
 
     func execute(javaScriptCommand: Command, result: ((Any?, Error?) -> Void)? = nil) {
@@ -57,22 +50,4 @@ final class JavaScriptExecutor: NSObject {
 }
 
 extension JavaScriptExecutor {
-    static var resetCSS: String {
-        return """
-        a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-        """
-    }
-    static var declarationCSS: String {
-        return """
-        * {
-        animation-play-state: var(--style);
-        }
-        """
-    }
-}
-
-extension JavaScriptExecutor: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        execute(javaScriptCommand: .insertCSS(rawCSS: insertCSSHandler()))
-    }
 }
