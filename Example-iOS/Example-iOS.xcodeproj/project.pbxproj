@@ -15,6 +15,8 @@
 		255156FA22926DE700AC21D2 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156F922926DE700AC21D2 /* SVGView.swift */; };
 		255156FC22926E8700AC21D2 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FB22926E8700AC21D2 /* image.svg */; };
 		255156FE22926EAF00AC21D2 /* SVGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156FD22926EAF00AC21D2 /* SVGLoader.swift */; };
+		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
+		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		255156F922926DE700AC21D2 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
 		255156FB22926E8700AC21D2 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = image.svg; path = ../../../../../../../Downloads/image.svg; sourceTree = "<group>"; };
 		255156FD22926EAF00AC21D2 /* SVGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGLoader.swift; sourceTree = "<group>"; };
+		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
+		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		255156E622926C8200AC21D2 /* Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				255156FF22929E8100AC21D2 /* loading-text.svg */,
 				255156FB22926E8700AC21D2 /* image.svg */,
 				255156E722926C8200AC21D2 /* AppDelegate.swift */,
 				255156E922926C8200AC21D2 /* ViewController.swift */,
@@ -69,6 +74,7 @@
 				255156F322926C8500AC21D2 /* Info.plist */,
 				255156F922926DE700AC21D2 /* SVGView.swift */,
 				255156FD22926EAF00AC21D2 /* SVGLoader.swift */,
+				255157012292A2BC00AC21D2 /* loading-text.css */,
 			);
 			path = "Example-iOS";
 			sourceTree = "<group>";
@@ -131,10 +137,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2551570022929E8100AC21D2 /* loading-text.svg in Resources */,
 				255156F222926C8500AC21D2 /* LaunchScreen.storyboard in Resources */,
 				255156EF22926C8500AC21D2 /* Assets.xcassets in Resources */,
 				255156FC22926E8700AC21D2 /* image.svg in Resources */,
 				255156ED22926C8200AC21D2 /* Main.storyboard in Resources */,
+				255157022292A2BC00AC21D2 /* loading-text.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
