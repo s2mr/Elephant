@@ -1,8 +1,8 @@
 import UIKit
 
 final class ViewController: UIViewController {
-//    let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
-    let svgView = SVGView(named: "image", animationOwner: .svg, style: .default)
+    let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
+//    let svgView = SVGView(named: "image", animationOwner: .svg)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ final class ViewController: UIViewController {
     }
 
     @objc private func viewTapped() {
-        svgView.isAnimate { [weak self] (value) in
+        svgView.isAnimate { [weak self] (value, _) in
             guard let value = value else { return }
             value ? self?.svgView.stopAnimation() : self?.svgView.startAnimation()
         }

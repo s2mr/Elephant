@@ -1,11 +1,6 @@
 import Foundation
 import WebKit
 
-enum AnimationOwner {
-    case css
-    case svg
-}
-
 final class SVGLoader {
     let html: String
     let svg: String
@@ -54,7 +49,5 @@ final class SVGLoader {
 
         </html>
         """
-
-        print(html)
     }
 }

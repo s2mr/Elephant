@@ -28,36 +28,28 @@ final class SVGView: WKWebView {
         scrollView.backgroundColor = UIColor.clear
     }
 
-    func isAnimate(result: @escaping (Bool?) -> Void) {
+    func isAnimate(result: @escaping (Bool?, Error?) -> Void) {
         switch loader.animationOwner {
         case .css: isAnimateCSS(result: result)
         case .svg: isAnimateSVG(result: result)
         }
     }
 
-    private func isAnimateSVG(result: @escaping (Bool?) -> Void) {
-        DispatchQueue.main.async { [weak self] in
-            self?.evaluateJavaScript("document.getElementsByTagName('svg')[0].animationsPaused()") { value, _ in
-                guard let value = value as? NSNumber, let bool = Bool(exactly: value) else { result(nil); return }
-                result(!bool)
-            }
+    private func isAnimateSVG(result: @escaping (Bool?, Error?) -> Void) {
+        executor.execute(javaScriptCommand: .isAnimateSVG) { (value, error) in
+            guard let value = value as? NSNumber, let bool = Bool(exactly: value) else { result(nil, error); return }
+            result(!bool, error)
         }
     }
 
-    private func isAnimateCSS(result: @escaping (Bool?) -> Void) {
-        DispatchQueue.main.async { [weak self] in
-            let js = """
-            var svg = document.body.getElementsByTagName("svg")[0];
-            window.getComputedStyle(svg).animationPlayState
-            """.replacingOccurrences(of: "\n", with: "")
-            self?.evaluateJavaScript(js) { value, error in
-                guard let value = value as? String else { result(nil); return }
-                result(value == "running")
-            }
+    private func isAnimateCSS(result: @escaping (Bool?, Error?) -> Void) {
+        executor.execute(javaScriptCommand: .isAnimateCSS) { (value, error) in
+            guard let value = value as? String else { result(nil, error); return }
+            result(value == "running", error)
         }
     }
 
-    func animationRawCSS(isAnimate: Bool) -> String {
+    private func animationRawCSS(isAnimate: Bool) -> String {
         let value = isAnimate ? "running" : "paused"
         return """
         * {
@@ -69,20 +61,32 @@ final class SVGView: WKWebView {
     func startAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
-            executor.deleteStyleIfNeeded()
-            executor.insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: true))
+            executor.execute(javaScriptCommand: .deleteStyleIfNeed) { _, e in
+                result?(e)
+            }
+            executor.execute(javaScriptCommand: .insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: true))) { _, e in
+                result?(e)
+            }
         case .svg:
-            executor.execute(javaScriptCommand: .startSVGAnimation)
+            executor.execute(javaScriptCommand: .startSVGAnimation) { _, e in
+                result?(e)
+            }
         }
     }
 
     func stopAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
-            executor.deleteStyleIfNeeded()
-            executor.insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: false))
+            executor.execute(javaScriptCommand: .deleteStyleIfNeed) { _, e in
+                result?(e)
+            }
+            executor.execute(javaScriptCommand: .insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: false))) { _, e in
+                result?(e)
+            }
         case .svg:
-            executor.execute(javaScriptCommand: .stopSVGAnimation)
+            executor.execute(javaScriptCommand: .stopSVGAnimation) { _, e in
+                result?(e)
+            }
         }
     }
 }
