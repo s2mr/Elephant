@@ -2,7 +2,7 @@ import WebKit
 
 final class SVGView: WKWebView {
     private let loader: SVGLoader
-    private var executor: JavascriptExecutor!
+    private var executor: JavaScriptExecutor!
 
     init(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
         let style = style ?? SVGLoader.Style(rawCSS: "")
@@ -11,7 +11,7 @@ final class SVGView: WKWebView {
         self.loader = loader
         super.init(frame: .zero, configuration: .init())
 
-        executor = JavascriptExecutor(webView: self) { return self.loader.css }
+        executor = JavaScriptExecutor(webView: self) { return self.loader.css }
         setup()
     }
 
@@ -49,22 +49,10 @@ final class SVGView: WKWebView {
         }
     }
 
-    private func animationRawCSS(isAnimate: Bool) -> String {
-        let value = isAnimate ? "running" : "paused"
-        return """
-        * {
-            animation-play-state: \(value);
-        }
-        """
-    }
-
     func startAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
-            executor.execute(javaScriptCommand: .deleteStyleIfNeed) { _, e in
-                result?(e)
-            }
-            executor.execute(javaScriptCommand: .insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: true))) { _, e in
+            executor.execute(javaScriptCommand: .startCSSAnimation) { (_, e) in
                 result?(e)
             }
         case .svg:
@@ -77,10 +65,7 @@ final class SVGView: WKWebView {
     func stopAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
-            executor.execute(javaScriptCommand: .deleteStyleIfNeed) { _, e in
-                result?(e)
-            }
-            executor.execute(javaScriptCommand: .insertCSS(rawCSS: loader.css + animationRawCSS(isAnimate: false))) { _, e in
+            executor.execute(javaScriptCommand: .stopCSSAnimation) { (_, e) in
                 result?(e)
             }
         case .svg:

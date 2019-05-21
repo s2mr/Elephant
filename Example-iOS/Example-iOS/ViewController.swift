@@ -16,7 +16,6 @@ final class ViewController: UIViewController {
             svgView.widthAnchor.constraint(equalToConstant: 400),
             svgView.heightAnchor.constraint(equalToConstant: 400),
             ])
-
 //        view.backgroundColor = .green
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
     }

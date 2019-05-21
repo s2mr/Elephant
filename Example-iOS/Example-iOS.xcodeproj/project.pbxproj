@@ -17,7 +17,7 @@
 		255156FE22926EAF00AC21D2 /* SVGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156FD22926EAF00AC21D2 /* SVGLoader.swift */; };
 		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
 		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
-		255157042293BDD500AC21D2 /* JavascriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157032293BDD500AC21D2 /* JavascriptExecutor.swift */; };
+		255157042293BDD500AC21D2 /* JavaScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */; };
 		255157062293D2CC00AC21D2 /* AnimationOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157052293D2CB00AC21D2 /* AnimationOwner.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		255156FD22926EAF00AC21D2 /* SVGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGLoader.swift; sourceTree = "<group>"; };
 		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
 		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
-		255157032293BDD500AC21D2 /* JavascriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavascriptExecutor.swift; sourceTree = "<group>"; };
+		255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptExecutor.swift; sourceTree = "<group>"; };
 		255157052293D2CB00AC21D2 /* AnimationOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationOwner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 				255156F922926DE700AC21D2 /* SVGView.swift */,
 				255156FD22926EAF00AC21D2 /* SVGLoader.swift */,
 				255157012292A2BC00AC21D2 /* loading-text.css */,
-				255157032293BDD500AC21D2 /* JavascriptExecutor.swift */,
+				255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */,
 				255157052293D2CB00AC21D2 /* AnimationOwner.swift */,
 			);
 			path = "Example-iOS";
@@ -164,7 +164,7 @@
 				255157062293D2CC00AC21D2 /* AnimationOwner.swift in Sources */,
 				255156EA22926C8200AC21D2 /* ViewController.swift in Sources */,
 				255156E822926C8200AC21D2 /* AppDelegate.swift in Sources */,
-				255157042293BDD500AC21D2 /* JavascriptExecutor.swift in Sources */,
+				255157042293BDD500AC21D2 /* JavaScriptExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
