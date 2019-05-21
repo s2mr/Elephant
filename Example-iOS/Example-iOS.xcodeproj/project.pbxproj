@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254DF94D2293FDF100C903A1 /* image.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
 		255156E422926C8200AC21D2 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		255156E722926C8200AC21D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		255156E922926C8200AC21D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +50,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		254DF94C2293FDE800C903A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				255156FF22929E8100AC21D2 /* loading-text.svg */,
+				254DF94D2293FDF100C903A1 /* image.svg */,
+				255157012292A2BC00AC21D2 /* loading-text.css */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		255156DB22926C8200AC21D2 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +79,7 @@
 		255156E622926C8200AC21D2 /* Example-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				255156FF22929E8100AC21D2 /* loading-text.svg */,
+				254DF94C2293FDE800C903A1 /* Resources */,
 				255156FB22926E8700AC21D2 /* image.svg */,
 				255156E722926C8200AC21D2 /* AppDelegate.swift */,
 				255156E922926C8200AC21D2 /* ViewController.swift */,
@@ -78,7 +89,6 @@
 				255156F322926C8500AC21D2 /* Info.plist */,
 				255156F922926DE700AC21D2 /* SVGView.swift */,
 				255156FD22926EAF00AC21D2 /* SVGLoader.swift */,
-				255157012292A2BC00AC21D2 /* loading-text.css */,
 				255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */,
 				255157052293D2CB00AC21D2 /* AnimationOwner.swift */,
 			);

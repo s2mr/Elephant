@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="none" viewBox="0 0 300 300">
+    <g>
+        <path stroke="#DD7FA9" stroke-width="8" d="M150 250C205.228 250 250 205.228 250 150C250 94.7715 205.228 50 150 50C94.7715 50 50 94.7715 50 150C50 190.618 74.2169 225.58 109 241.236"/>
+        <path fill="#DD7FA9" d="M164.717 235.98L163.719 264.542L139.483 249.397L164.717 235.98Z"/>
+        <animateTransform attributeName="transform" dur="3s" from="0 150, 150" repeatCount="indefinite" to="360 150, 150" type="rotate"/>
+    </g>
+    <circle cx="98" cy="150" r="17" fill="#C98896">
+        <animate attributeName="opacity" attributeType="XML" begin="0.2" dur="1.0s" repeatCount="indefinite" values="0.1;1.0;0.1"/>
+    </circle>
+    <circle cx="150" cy="150" r="17" fill="#ECC780">
+        <animate attributeName="opacity" attributeType="XML" begin="0.4" dur="1.0s" repeatCount="indefinite" values="0.1;1.0;0.1"/>
+    </circle>
+    <circle cx="202" cy="150" r="17" fill="#97CDBE">
+        <animate attributeName="opacity" attributeType="XML" begin="0.6" dur="1.0s" repeatCount="indefinite" values="0.1;1.0;0.1"/>
+    </circle>
+</svg>

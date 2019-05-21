@@ -3,7 +3,7 @@ import WebKit
 
 final class JavaScriptExecutor: NSObject {
     typealias InsertCSSHandler = () -> String
-    private let webView: WKWebView
+    private weak var webView: WKWebView?
     private let insertCSSHandler: InsertCSSHandler
 
     enum Command {
@@ -49,7 +49,7 @@ final class JavaScriptExecutor: NSObject {
     private func execute(javaScript: String, result: ((Any?, Error?) -> Void)? = nil) {
         let inlineJavaScript = javaScript.replacingOccurrences(of: "\n", with: "")
         DispatchQueue.main.async { [weak self] in
-            self?.webView.evaluateJavaScript(inlineJavaScript) { (value, error) in
+            self?.webView?.evaluateJavaScript(inlineJavaScript) { (value, error) in
                 result?(value, error)
             }
         }
