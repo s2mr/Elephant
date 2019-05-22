@@ -8,7 +8,6 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(svgView)
-//        svgView.backgroundColor = .red
         svgView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             svgView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -16,7 +15,6 @@ final class ViewController: UIViewController {
             svgView.widthAnchor.constraint(equalToConstant: 400),
             svgView.heightAnchor.constraint(equalToConstant: 400),
             ])
-//        view.backgroundColor = .green
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
     }
 

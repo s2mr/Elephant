@@ -2,9 +2,7 @@ import Foundation
 import WebKit
 
 final class JavaScriptExecutor: NSObject {
-    typealias InsertCSSHandler = () -> String
     private weak var webView: WKWebView?
-    private let insertCSSHandler: InsertCSSHandler
 
     enum Command {
         case startSVGAnimation
@@ -29,9 +27,8 @@ final class JavaScriptExecutor: NSObject {
         }
     }
 
-    init(webView: WKWebView, insertCSSHandler: @escaping InsertCSSHandler) {
+    init(webView: WKWebView) {
         self.webView = webView
-        self.insertCSSHandler = insertCSSHandler
         super.init()
     }
 
@@ -47,7 +44,4 @@ final class JavaScriptExecutor: NSObject {
             }
         }
     }
-}
-
-extension JavaScriptExecutor {
 }

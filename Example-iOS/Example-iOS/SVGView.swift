@@ -2,7 +2,7 @@ import WebKit
 
 final class SVGView: WKWebView {
     private let loader: SVGLoader
-    private var executor: JavaScriptExecutor!
+    private lazy var executor = JavaScriptExecutor(webView: self)
 
     init(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
         let style = style ?? SVGLoader.Style(rawCSS: "")
@@ -11,7 +11,6 @@ final class SVGView: WKWebView {
         self.loader = loader
         super.init(frame: .zero, configuration: .init())
 
-        executor = JavaScriptExecutor(webView: self) { return self.loader.css }
         setup()
     }
 
