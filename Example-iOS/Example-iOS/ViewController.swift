@@ -1,8 +1,8 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
-//    let svgView = SVGView(named: "image", animationOwner: .svg)
+//    let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
+    let svgView = SVGView(named: "image", animationOwner: .svg)
 
     override func viewDidLoad() {
         super.viewDidLoad()

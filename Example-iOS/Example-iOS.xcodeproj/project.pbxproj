@@ -13,16 +13,15 @@
 		255156EF22926C8500AC21D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255156EE22926C8500AC21D2 /* Assets.xcassets */; };
 		255156F222926C8500AC21D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255156F022926C8500AC21D2 /* LaunchScreen.storyboard */; };
 		255156FA22926DE700AC21D2 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156F922926DE700AC21D2 /* SVGView.swift */; };
-		255156FC22926E8700AC21D2 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FB22926E8700AC21D2 /* image.svg */; };
 		255156FE22926EAF00AC21D2 /* SVGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156FD22926EAF00AC21D2 /* SVGLoader.swift */; };
 		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
 		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
 		255157042293BDD500AC21D2 /* JavaScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */; };
 		255157062293D2CC00AC21D2 /* AnimationOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157052293D2CB00AC21D2 /* AnimationOwner.swift */; };
+		25F9C15D22954171006E0374 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 25F9C15C22954171006E0374 /* image.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		254DF94D2293FDF100C903A1 /* image.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
 		255156E422926C8200AC21D2 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		255156E722926C8200AC21D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		255156E922926C8200AC21D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,12 +30,12 @@
 		255156F122926C8500AC21D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		255156F322926C8500AC21D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255156F922926DE700AC21D2 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
-		255156FB22926E8700AC21D2 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = image.svg; path = ../../../../../../../Downloads/image.svg; sourceTree = "<group>"; };
 		255156FD22926EAF00AC21D2 /* SVGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGLoader.swift; sourceTree = "<group>"; };
 		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
 		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
 		255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptExecutor.swift; sourceTree = "<group>"; };
 		255157052293D2CB00AC21D2 /* AnimationOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationOwner.swift; sourceTree = "<group>"; };
+		25F9C15C22954171006E0374 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +52,8 @@
 		254DF94C2293FDE800C903A1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				25F9C15C22954171006E0374 /* image.svg */,
 				255156FF22929E8100AC21D2 /* loading-text.svg */,
-				254DF94D2293FDF100C903A1 /* image.svg */,
 				255157012292A2BC00AC21D2 /* loading-text.css */,
 			);
 			path = Resources;
@@ -80,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				254DF94C2293FDE800C903A1 /* Resources */,
-				255156FB22926E8700AC21D2 /* image.svg */,
 				255156E722926C8200AC21D2 /* AppDelegate.swift */,
 				255156E922926C8200AC21D2 /* ViewController.swift */,
 				255156EB22926C8200AC21D2 /* Main.storyboard */,
@@ -155,8 +153,8 @@
 			files = (
 				2551570022929E8100AC21D2 /* loading-text.svg in Resources */,
 				255156F222926C8500AC21D2 /* LaunchScreen.storyboard in Resources */,
+				25F9C15D22954171006E0374 /* image.svg in Resources */,
 				255156EF22926C8500AC21D2 /* Assets.xcassets in Resources */,
-				255156FC22926E8700AC21D2 /* image.svg in Resources */,
 				255156ED22926C8200AC21D2 /* Main.storyboard in Resources */,
 				255157022292A2BC00AC21D2 /* loading-text.css in Resources */,
 			);
