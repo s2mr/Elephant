@@ -1,13 +1,13 @@
 import Foundation
 import WebKit
 
-final class SVGLoader {
+public final class SVGLoader {
     let html: String
     let svg: String
     let css: String
     let animationOwner: AnimationOwner
 
-    struct Style {
+    public struct Style {
         var rawCSS: String
 
         var resetCSS: String {
@@ -24,7 +24,7 @@ final class SVGLoader {
             """
         }
 
-        static var `default`: Style {
+        public static var `default`: Style {
             return Style(rawCSS: """
             svg {
                 width: 100vw;

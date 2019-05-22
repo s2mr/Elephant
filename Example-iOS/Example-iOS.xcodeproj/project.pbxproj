@@ -12,14 +12,26 @@
 		255156ED22926C8200AC21D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255156EB22926C8200AC21D2 /* Main.storyboard */; };
 		255156EF22926C8500AC21D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255156EE22926C8500AC21D2 /* Assets.xcassets */; };
 		255156F222926C8500AC21D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255156F022926C8500AC21D2 /* LaunchScreen.storyboard */; };
-		255156FA22926DE700AC21D2 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156F922926DE700AC21D2 /* SVGView.swift */; };
-		255156FE22926EAF00AC21D2 /* SVGLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255156FD22926EAF00AC21D2 /* SVGLoader.swift */; };
 		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
 		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
-		255157042293BDD500AC21D2 /* JavaScriptExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */; };
-		255157062293D2CC00AC21D2 /* AnimationOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255157052293D2CB00AC21D2 /* AnimationOwner.swift */; };
 		25F9C15D22954171006E0374 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 25F9C15C22954171006E0374 /* image.svg */; };
+		25F9C1A422954985006E0374 /* Elephant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1A322954985006E0374 /* Elephant.framework */; };
+		25F9C1A522954985006E0374 /* Elephant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1A322954985006E0374 /* Elephant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		25F9C1A622954985006E0374 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				25F9C1A522954985006E0374 /* Elephant.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		255156E422926C8200AC21D2 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,13 +41,10 @@
 		255156EE22926C8500AC21D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		255156F122926C8500AC21D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		255156F322926C8500AC21D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		255156F922926DE700AC21D2 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
-		255156FD22926EAF00AC21D2 /* SVGLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGLoader.swift; sourceTree = "<group>"; };
 		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
 		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
-		255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaScriptExecutor.swift; sourceTree = "<group>"; };
-		255157052293D2CB00AC21D2 /* AnimationOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationOwner.swift; sourceTree = "<group>"; };
 		25F9C15C22954171006E0374 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
+		25F9C1A322954985006E0374 /* Elephant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Elephant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F9C1A422954985006E0374 /* Elephant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,7 @@
 		255156DB22926C8200AC21D2 = {
 			isa = PBXGroup;
 			children = (
+				25F9C1A322954985006E0374 /* Elephant.framework */,
 				255156E622926C8200AC21D2 /* Example-iOS */,
 				255156E522926C8200AC21D2 /* Products */,
 			);
@@ -85,10 +96,6 @@
 				255156EE22926C8500AC21D2 /* Assets.xcassets */,
 				255156F022926C8500AC21D2 /* LaunchScreen.storyboard */,
 				255156F322926C8500AC21D2 /* Info.plist */,
-				255156F922926DE700AC21D2 /* SVGView.swift */,
-				255156FD22926EAF00AC21D2 /* SVGLoader.swift */,
-				255157032293BDD500AC21D2 /* JavaScriptExecutor.swift */,
-				255157052293D2CB00AC21D2 /* AnimationOwner.swift */,
 			);
 			path = "Example-iOS";
 			sourceTree = "<group>";
@@ -103,6 +110,7 @@
 				255156E022926C8200AC21D2 /* Sources */,
 				255156E122926C8200AC21D2 /* Frameworks */,
 				255156E222926C8200AC21D2 /* Resources */,
+				25F9C1A622954985006E0374 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,12 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				255156FA22926DE700AC21D2 /* SVGView.swift in Sources */,
-				255156FE22926EAF00AC21D2 /* SVGLoader.swift in Sources */,
-				255157062293D2CC00AC21D2 /* AnimationOwner.swift in Sources */,
 				255156EA22926C8200AC21D2 /* ViewController.swift in Sources */,
 				255156E822926C8200AC21D2 /* AppDelegate.swift in Sources */,
-				255157042293BDD500AC21D2 /* JavaScriptExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

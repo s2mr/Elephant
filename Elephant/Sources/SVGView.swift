@@ -1,10 +1,10 @@
 import WebKit
 
-final class SVGView: WKWebView {
+public class SVGView: WKWebView {
     private let loader: SVGLoader
     private lazy var executor = JavaScriptExecutor(webView: self)
 
-    init(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
+    public init(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
         let style = style ?? SVGLoader.Style(rawCSS: "")
         guard let loader = SVGLoader(named: named, animationOwner: animationOwner, style: style, bundle: bundle)
             else { fatalError("Image not found.") }
@@ -27,7 +27,7 @@ final class SVGView: WKWebView {
         scrollView.backgroundColor = UIColor.clear
     }
 
-    func isAnimate(result: @escaping (Bool?, Error?) -> Void) {
+    public func isAnimate(result: @escaping (Bool?, Error?) -> Void) {
         switch loader.animationOwner {
         case .css: isAnimateCSS(result: result)
         case .svg: isAnimateSVG(result: result)
@@ -48,7 +48,7 @@ final class SVGView: WKWebView {
         }
     }
 
-    func startAnimation(result: ((Error?) -> Void)? = nil) {
+    public func startAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
             executor.execute(javaScriptCommand: .startCSSAnimation) { (_, e) in
@@ -61,7 +61,7 @@ final class SVGView: WKWebView {
         }
     }
 
-    func stopAnimation(result: ((Error?) -> Void)? = nil) {
+    public func stopAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
             executor.execute(javaScriptCommand: .stopCSSAnimation) { (_, e) in
