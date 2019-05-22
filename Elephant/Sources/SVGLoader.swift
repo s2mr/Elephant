@@ -33,7 +33,7 @@ public final class SVGLoader {
             """)
         }
 
-        static func cssFile(name: String, bundle: Bundle = .main) -> Style {
+        public static func cssFile(name: String, bundle: Bundle = .main) -> Style {
             guard
                 let url = bundle.url(forResource: name, withExtension: "css"),
                 let rawString = try? String(contentsOf: url, encoding: .utf8) else { fatalError("Cannot read file.") }
