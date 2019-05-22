@@ -15,8 +15,8 @@
 		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
 		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
 		25F9C15D22954171006E0374 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 25F9C15C22954171006E0374 /* image.svg */; };
-		25F9C1A422954985006E0374 /* Elephant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1A322954985006E0374 /* Elephant.framework */; };
-		25F9C1A522954985006E0374 /* Elephant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1A322954985006E0374 /* Elephant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		25F9C1AB22954CD2006E0374 /* Elephant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1AA22954CD2006E0374 /* Elephant.framework */; };
+		25F9C1AC22954CD2006E0374 /* Elephant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1AA22954CD2006E0374 /* Elephant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				25F9C1A522954985006E0374 /* Elephant.framework in Embed Frameworks */,
+				25F9C1AC22954CD2006E0374 /* Elephant.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,7 +44,7 @@
 		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
 		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
 		25F9C15C22954171006E0374 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
-		25F9C1A322954985006E0374 /* Elephant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Elephant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F9C1AA22954CD2006E0374 /* Elephant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Elephant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25F9C1A422954985006E0374 /* Elephant.framework in Frameworks */,
+				25F9C1AB22954CD2006E0374 /* Elephant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 		255156DB22926C8200AC21D2 = {
 			isa = PBXGroup;
 			children = (
-				25F9C1A322954985006E0374 /* Elephant.framework */,
+				25F9C1AA22954CD2006E0374 /* Elephant.framework */,
 				255156E622926C8200AC21D2 /* Example-iOS */,
 				255156E522926C8200AC21D2 /* Products */,
 			);
