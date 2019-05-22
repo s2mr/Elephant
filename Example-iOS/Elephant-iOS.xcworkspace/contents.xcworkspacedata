@@ -5,6 +5,6 @@
       location = "container:Example-iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../Elephant/Elephant.xcodeproj">
+      location = "group:../Elephant.xcodeproj">
    </FileRef>
 </Workspace>
