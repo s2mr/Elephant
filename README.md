@@ -1,6 +1,6 @@
-# Elephant
+<h1 align="center">Elephant</h1>
 
-**This is SVG animation presentation kit for iOS.**
+<strong align="center">This is SVG animation presentation kit for iOS.</strong>
 
 <p align="center">
 <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
@@ -17,10 +17,12 @@ You can run example app. Please open `Example-iOS/Elephant-iOS.xcworkspace`!
 
 ## Usage
 You can display the svg image with animation.
+ 
 **We are supportted two animation formats😎**
+
 The format is below. 
-- 1. Animation in SVG
-- 2. Animation in CSS
+- Animation in SVG
+- Animation in CSS
 Usage is difference by the format.
 
 This is initialization SVGView for format 1 (Animation in SVG) usage.
