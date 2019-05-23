@@ -1,6 +1,6 @@
 <h1 align="center">Elephant</h1>
 
-<strong align="center">This is SVG animation presentation kit for iOS.</strong>
+<p><strong align="center">This is SVG animation presentation kit for iOS.</strong></p>
 
 <p align="center">
 <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
@@ -25,6 +25,8 @@ The format is below.
 - Animation in CSS
 Usage is difference by the format.
 
+### SVGView initialization
+
 This is initialization SVGView for format 1 (Animation in SVG) usage.
 ```swift
 SVGView(named: "svg-filename", animationOwner: .svg)
@@ -34,6 +36,8 @@ This is initialization SVGView for format 2 (Animation in CSS) usage.
 ```swift
 SVGView(named: "svg-filename", animationOwner: .css, style: .cssFile(name: "css-filename"))
 ```
+
+### Show in your ViewController
 
 And, you initialized view, you have to do is only add view to parent view, and start animation like below.
 ```swift
