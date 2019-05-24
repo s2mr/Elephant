@@ -15,6 +15,8 @@
 ## Example
 You can run example app. Please open `Example-iOS/Elephant-iOS.xcworkspace`!
 
+<img src="https://github.com/kzumu/Elephant/raw/resources/Resources/demo.gif" width="300"/>
+
 ## Usage
 You can display the svg image with animation.
  
