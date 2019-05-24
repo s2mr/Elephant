@@ -12,16 +12,19 @@ final class ViewController: UIViewController {
     }()
     private let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
     private let svgView2 = SVGView(named: "image", animationOwner: .svg)
+    private var svgViews: [SVGView] { return [svgView, svgView2] }
     
-    private lazy var startAnimationButton: UIButton = self.createButton(backgroundColor: .blue, title: "Start")
-    private lazy var stopAnimationButton: UIButton = self.createButton(backgroundColor: .red, title: "Stop")
+    private lazy var startAnimationButton: UIButton = self.createButton(backgroundColor: #colorLiteral(red: 0.4549019608, green: 0.7254901961, blue: 1, alpha: 1), title: "Start")
+    private lazy var stopAnimationButton: UIButton = self.createButton(backgroundColor: #colorLiteral(red: 0.3333333333, green: 0.937254902, blue: 0.768627451, alpha: 1), title: "Stop")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white 
         setLayout()
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))
+        
+        startAnimationButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        stopAnimationButton.addTarget(self, action: #selector(stopButtonTapped), for: .touchUpInside)
     }
     
     private func setLayout() {
@@ -67,15 +70,27 @@ final class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
-
-    @objc private func viewTapped() {
-        svgView.isAnimate { [weak self] (value, _) in
-            guard let value = value else { return }
-            value ? self?.svgView.stopAnimation() : self?.svgView.startAnimation()
+    
+    @objc private func startButtonTapped() {
+        svgViews.forEach { [weak self] view in
+            view.startAnimation() { _ in
+                self?.printIsAnimate(view)
+            }
         }
-        svgView2.isAnimate { [weak self] (value, _) in
+    }
+    
+    @objc private func stopButtonTapped() {
+        svgViews.forEach { [weak self] view in
+            view.stopAnimation() { _ in
+                self?.printIsAnimate(view)
+            }
+        }
+    }
+
+    @objc private func printIsAnimate(_ view: SVGView) {
+        view.isAnimate { (value, _) in
             guard let value = value else { return }
-            value ? self?.svgView2.stopAnimation() : self?.svgView2.startAnimation()
+            print("[\(Unmanaged.passUnretained(view).toOpaque())]", "isAnimate:", value)
         }
     }
 }

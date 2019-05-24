@@ -23,6 +23,7 @@ You can display the svg image with animation.
 The format is below. 
 - Animation in SVG
 - Animation in CSS
+
 Usage is difference by the format.
 
 ### SVGView initialization
