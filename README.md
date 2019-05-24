@@ -96,7 +96,7 @@ $ pod install
 Add this to `Cartfile`
 
 ```
-github "Elephant"
+github "kzumu/Elephant"
 ```
 
 ```bash
