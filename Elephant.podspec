@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'SVG animation kit for iOS'
   s.description      = <<-DESC
-You can display elegant animation in app.
+You can display the elegant svg animation in app.
                        DESC
   s.homepage         = 'https://github.com/kzumu/Elephant'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
