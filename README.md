@@ -7,6 +7,7 @@
 <a href="https://github.com/kzumu/Elephant/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/kzumu/Elephant.svg"/></a>
 <a href="https://cocoapods.org/pods/Carbon"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/Elephant.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/carthage-compatible-yellow.svg"/></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fkzumu%2FElephant?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkzumu%2FElephant.svg?type=shield"/></a>
 </br>
 <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
 <a href="https://github.com/kzumu/Elephant/blob/master/LICENSE"><img alt="Lincense" src="https://img.shields.io/badge/License-Apache%202.0-black.svg"/></a>
@@ -110,3 +111,6 @@ $ carthage update --platform ios
 ## License
 
 Elephant is available under the Apache v2. See the LICENSE file for more info.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkzumu%2FElephant.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkzumu%2FElephant?ref=badge_large)
