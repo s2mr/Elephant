@@ -5,13 +5,29 @@ public class SVGView: UIView {
     private let loader: SVGLoader
     private lazy var executor = JavaScriptExecutor(webView: self.webView)
 
-    public init(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
+    public init?(named: String, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default, bundle: Bundle = .main) {
         let style = style ?? SVGLoader.Style(rawCSS: "")
         guard let loader = SVGLoader(named: named, animationOwner: animationOwner, style: style, bundle: bundle)
-            else { fatalError("Image not found.") }
+            else {
+                print("Image not found.")
+                return nil
+        }
         self.loader = loader
         super.init(frame: .zero)
 
+        setup()
+    }
+    
+    public init?(fileURL: URL, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default) {
+        let style = style ?? SVGLoader.Style(rawCSS: "")
+        guard let loader = SVGLoader(fileURL: fileURL, animationOwner: animationOwner, style: style)
+            else {
+                print("Image not found.")
+                return nil
+        }
+        self.loader = loader
+        super.init(frame: .zero)
+        
         setup()
     }
 

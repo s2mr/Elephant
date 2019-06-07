@@ -32,43 +32,78 @@ public final class SVGLoader {
             }
             """)
         }
+        
+        public func buildHtml(svg: String) -> String {
+            return """
+            <!doctype html>
+            <html>
+            
+            <head>
+            <meta charset="utf-8"/>
+            <style>
+            \(rawCSS)
+            \(resetCSS)
+            \(declarationCSS)
+            </style>
+            </head>
+            
+            <body>
+            \(svg)
+            </body>
+            
+            </html>
+            """
+        }
 
         public static func cssFile(name: String, bundle: Bundle = .main) -> Style {
             guard
                 let url = bundle.url(forResource: name, withExtension: "css"),
-                let rawString = try? String(contentsOf: url, encoding: .utf8) else { fatalError("Cannot read file.") }
+                let rawString = try? String(contentsOf: url, encoding: .utf8) else {
+                    print("Cannot read file.")
+                    return .init(rawCSS: Style.default.rawCSS)
+            }
 
             return .init(rawCSS: rawString + "\n" + Style.default.rawCSS)
         }
+        
+        public static func cssFile(fileURL: URL) -> Style {
+            guard FileManager.default.fileExists(atPath: fileURL.path),
+                let rawString = try? String(contentsOf: fileURL, encoding: .utf8) else {
+                    print("Cannot read file.")
+                    return .init(rawCSS: Style.default.rawCSS)
+            }
+            return .init(rawCSS: rawString + "\n" + Style.default.rawCSS)
+        }
+        
     }
 
     init?(named: String, animationOwner: AnimationOwner, style: Style, bundle: Bundle) {
         guard
             let url = bundle.url(forResource: named, withExtension: "svg"),
             let data = try? Data(contentsOf: url),
-            let svg = String(data: data, encoding: .utf8) else { return nil }
+            let svg = String(data: data, encoding: .utf8) else {
+                print("svg file not found")
+                return nil
+        }
 
         self.animationOwner = animationOwner
         self.svg = svg
         self.css = style.rawCSS
-        self.html = """
-        <!doctype html>
-        <html>
-
-        <head>
-            <meta charset="utf-8"/>
-            <style>
-                \(self.css)
-                \(style.resetCSS)
-                \(style.declarationCSS)
-            </style>
-        </head>
-
-        <body>
-            \(self.svg)
-        </body>
-
-        </html>
-        """
+        self.html = style.buildHtml(svg: svg)
     }
+    
+    init?(fileURL: URL, animationOwner: AnimationOwner, style: Style) {
+        
+        guard FileManager.default.fileExists(atPath: fileURL.path), let data = try? Data(contentsOf: fileURL),
+            let svg = String(data: data, encoding: .utf8) else {
+                print("svg file not found")
+                return nil
+        }
+        
+        self.animationOwner = animationOwner
+        self.svg = svg
+        self.css = style.rawCSS
+        self.html = style.buildHtml(svg: svg)
+    }
+    
 }

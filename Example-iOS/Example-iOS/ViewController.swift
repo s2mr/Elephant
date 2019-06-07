@@ -12,7 +12,7 @@ final class ViewController: UIViewController {
     }()
     private let svgView = SVGView(named: "loading-text", animationOwner: .css, style: .cssFile(name: "loading-text"))
     private let svgView2 = SVGView(named: "image", animationOwner: .svg)
-    private var svgViews: [SVGView] { return [svgView, svgView2] }
+    private var svgViews: [SVGView] = []
     
     private lazy var startAnimationButton: UIButton = self.createButton(backgroundColor: #colorLiteral(red: 0.4549019608, green: 0.7254901961, blue: 1, alpha: 1), title: "Start")
     private lazy var stopAnimationButton: UIButton = self.createButton(backgroundColor: #colorLiteral(red: 0.3333333333, green: 0.937254902, blue: 0.768627451, alpha: 1), title: "Stop")
@@ -28,6 +28,16 @@ final class ViewController: UIViewController {
     }
     
     private func setLayout() {
+        
+        guard let svgView = svgView else {
+            print("svgView wasn't init")
+            return
+        }
+        guard let svgView2 = svgView2 else {
+            print("svgView wasn't init")
+            return
+        }
+        svgViews = [svgView, svgView2]
         container.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(container)
         NSLayoutConstraint.activate([
