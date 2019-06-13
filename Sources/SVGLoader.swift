@@ -32,28 +32,6 @@ public final class SVGLoader {
             }
             """)
         }
-        
-        public func buildHtml(svg: String) -> String {
-            return """
-            <!doctype html>
-            <html>
-            
-            <head>
-            <meta charset="utf-8"/>
-            <style>
-            \(rawCSS)
-            \(resetCSS)
-            \(declarationCSS)
-            </style>
-            </head>
-            
-            <body>
-            \(svg)
-            </body>
-            
-            </html>
-            """
-        }
 
         public static func cssFile(name: String, bundle: Bundle = .main) -> Style {
             guard
@@ -76,6 +54,33 @@ public final class SVGLoader {
         }
         
     }
+    
+    private struct HtmlBuilder {
+        
+        public func buildHtml(svg: String, style: Style) -> String {
+            return """
+            <!doctype html>
+            <html>
+            
+            <head>
+            <meta charset="utf-8"/>
+            <style>
+            \(style.rawCSS)
+            \(style.resetCSS)
+            \(style.declarationCSS)
+            </style>
+            </head>
+            
+            <body>
+            \(svg)
+            </body>
+            
+            </html>
+            """
+        }
+        
+    }
+
 
     init?(named: String, animationOwner: AnimationOwner, style: Style, bundle: Bundle) {
         guard
@@ -89,7 +94,7 @@ public final class SVGLoader {
         self.animationOwner = animationOwner
         self.svg = svg
         self.css = style.rawCSS
-        self.html = style.buildHtml(svg: svg)
+        self.html = HtmlBuilder().buildHtml(svg: svg, style: style)
     }
     
     init?(fileURL: URL, animationOwner: AnimationOwner, style: Style) {
@@ -103,7 +108,7 @@ public final class SVGLoader {
         self.animationOwner = animationOwner
         self.svg = svg
         self.css = style.rawCSS
-        self.html = style.buildHtml(svg: svg)
+        self.html = HtmlBuilder().buildHtml(svg: svg, style: style)
     }
     
 }
