@@ -1,6 +1,6 @@
 import WebKit
 
-public class SVGView: UIView {
+public class SVGView: UIView, WKNavigationDelegate {
     private lazy var webView: WKWebView = .init(frame: self.bounds)
     private let loader: SVGLoader
     private lazy var executor = JavaScriptExecutor(webView: self.webView)
@@ -36,6 +36,7 @@ public class SVGView: UIView {
     }
 
     private func setup() {
+        webView.navigationDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(webView)
         NSLayoutConstraint.activate([
@@ -98,5 +99,12 @@ public class SVGView: UIView {
                 result?(e)
             }
         }
+    }
+
+    // MARK: - WKNavigationDelegate
+
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        backgroundColor = .clear
+        isOpaque = false
     }
 }
