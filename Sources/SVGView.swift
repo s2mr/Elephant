@@ -48,6 +48,8 @@ public class SVGView: UIView, WKNavigationDelegate {
         isUserInteractionEnabled = false
         isOpaque = false
         backgroundColor = UIColor.clear
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.clear
         webView.scrollView.backgroundColor = UIColor.clear
         webView.scrollView.isScrollEnabled = false
         
