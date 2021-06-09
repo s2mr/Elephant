@@ -45,6 +45,8 @@ public class SVGView: UIView, WKNavigationDelegate {
            webView.bottomAnchor.constraint(equalTo: bottomAnchor),
            webView.leftAnchor.constraint(equalTo: leftAnchor),
             ])
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
         isUserInteractionEnabled = false
         isOpaque = false
         backgroundColor = UIColor.clear
