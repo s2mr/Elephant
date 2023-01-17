@@ -17,6 +17,7 @@ DerivedData
 *.xccheckout
 *.xcuserstate
 build/
+.build
 
 ## Documentation
 docs/docsets/
