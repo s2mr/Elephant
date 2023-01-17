@@ -1,3 +1,4 @@
+import UIKit
 import WebKit
 
 public class SVGView: UIView, WKNavigationDelegate {

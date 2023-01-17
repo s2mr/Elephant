@@ -28,7 +28,6 @@ final class ViewController: UIViewController {
     }
     
     private func setLayout() {
-        
         guard let svgView = svgView else {
             print("svgView wasn't init")
             return

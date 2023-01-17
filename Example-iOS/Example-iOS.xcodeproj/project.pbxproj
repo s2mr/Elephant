@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,24 +13,9 @@
 		255156F222926C8500AC21D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255156F022926C8500AC21D2 /* LaunchScreen.storyboard */; };
 		2551570022929E8100AC21D2 /* loading-text.svg in Resources */ = {isa = PBXBuildFile; fileRef = 255156FF22929E8100AC21D2 /* loading-text.svg */; };
 		255157022292A2BC00AC21D2 /* loading-text.css in Resources */ = {isa = PBXBuildFile; fileRef = 255157012292A2BC00AC21D2 /* loading-text.css */; };
+		2574F92B2976DA5000C34861 /* Elephant in Frameworks */ = {isa = PBXBuildFile; productRef = 2574F92A2976DA5000C34861 /* Elephant */; };
 		25F9C15D22954171006E0374 /* image.svg in Resources */ = {isa = PBXBuildFile; fileRef = 25F9C15C22954171006E0374 /* image.svg */; };
-		25F9C1AB22954CD2006E0374 /* Elephant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1AA22954CD2006E0374 /* Elephant.framework */; };
-		25F9C1AC22954CD2006E0374 /* Elephant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25F9C1AA22954CD2006E0374 /* Elephant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		25F9C1A622954985006E0374 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				25F9C1AC22954CD2006E0374 /* Elephant.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		255156E422926C8200AC21D2 /* Example-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,8 +26,8 @@
 		255156F322926C8500AC21D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		255156FF22929E8100AC21D2 /* loading-text.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "loading-text.svg"; sourceTree = "<group>"; };
 		255157012292A2BC00AC21D2 /* loading-text.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "loading-text.css"; sourceTree = "<group>"; };
+		2574F9292976DA3400C34861 /* Elephant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Elephant; path = ..; sourceTree = "<group>"; };
 		25F9C15C22954171006E0374 /* image.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = image.svg; sourceTree = "<group>"; };
-		25F9C1AA22954CD2006E0374 /* Elephant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Elephant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25F9C1AB22954CD2006E0374 /* Elephant.framework in Frameworks */,
+				2574F92B2976DA5000C34861 /* Elephant in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +55,10 @@
 		255156DB22926C8200AC21D2 = {
 			isa = PBXGroup;
 			children = (
-				25F9C1AA22954CD2006E0374 /* Elephant.framework */,
+				2574F9292976DA3400C34861 /* Elephant */,
 				255156E622926C8200AC21D2 /* Example-iOS */,
 				255156E522926C8200AC21D2 /* Products */,
+				257561902976D65900FCD019 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +83,13 @@
 			path = "Example-iOS";
 			sourceTree = "<group>";
 		};
+		257561902976D65900FCD019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,13 +100,15 @@
 				255156E022926C8200AC21D2 /* Sources */,
 				255156E122926C8200AC21D2 /* Frameworks */,
 				255156E222926C8200AC21D2 /* Resources */,
-				25F9C1A622954985006E0374 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Example-iOS";
+			packageProductDependencies = (
+				2574F92A2976DA5000C34861 /* Elephant */,
+			);
 			productName = "Example-iOS";
 			productReference = 255156E422926C8200AC21D2 /* Example-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -362,6 +357,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2574F92A2976DA5000C34861 /* Elephant */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Elephant;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 255156DC22926C8200AC21D2 /* Project object */;
 }
