@@ -4,26 +4,26 @@
 
 <p align="center">
 <a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
-<a href="https://github.com/kzumu/Elephant/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/kzumu/Elephant.svg"/></a>
+<a href="https://github.com/s2mr/Elephant/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/s2mr/Elephant.svg"/></a>
 <a href="https://cocoapods.org/pods/Carbon"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/Elephant.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/carthage-compatible-yellow.svg"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fkzumu%2FElephant?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkzumu%2FElephant.svg?type=shield"/></a>
 </br>
 <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
-<a href="https://github.com/kzumu/Elephant/blob/master/LICENSE"><img alt="Lincense" src="https://img.shields.io/badge/License-Apache%202.0-black.svg"/></a>
+<a href="https://github.com/s2mr/Elephant/blob/master/LICENSE"><img alt="Lincense" src="https://img.shields.io/badge/License-Apache%202.0-black.svg"/></a>
 </p>
 
 ## Example
 You can run example app. Please open `Example-iOS/Elephant-iOS.xcworkspace`!
 
-<img src="https://github.com/kzumu/Elephant/raw/resources/Resources/demo.gif" width="300" align="center"/>
+<img src="https://github.com/s2mr/Elephant/raw/resources/Resources/demo.gif" width="300" align="center"/>
 
 ## Usage
 You can display the svg image with animation.
- 
+
 **We are supportted two animation formats😎**
 
-The format is below. 
+The format is below.
 - Animation in SVG
 - Animation in CSS
 
@@ -60,19 +60,19 @@ class ViewController: UIViewController {
             svgView.heightAnchor.constraint(equalToConstant: 400),
         ])
 
-        svgView.startAnimation() 
+        svgView.startAnimation()
 
         // svgView.stopAnimation()    // Stop animation.
 
         // svgView.isAnimate { [weak self] (value, error) in
         //     if let error = error {
         //         print(error)
-        //     } 
+        //     }
         //     guard let value = value else { return } // value means whether animation is moving.
         // }
     }
 }
-  
+
 ```
 
 ## Requirements
@@ -80,6 +80,16 @@ class ViewController: UIViewController {
 - Swift 5.0
 
 ## Installation
+
+### [Swift package manager](https://github.com/apple/swift-package-manager)
+
+Add the following to the dependencies of your Package.swift:
+
+``` swift
+dependencies: [
+    .package(url: "https://github.com/s2mr/Elephant.git", from: "Elephant version"),
+]
+```
 
 ### [CocoaPods](https://cocoapods.org)
 Add this to `Podfile`
@@ -92,12 +102,11 @@ pod 'Elephant'
 $ pod install
 ```
 
-### Carthage
 ### [Carthage](https://github.com/Carthage/Carthage)
 Add this to `Cartfile`
 
 ```
-github "kzumu/Elephant"
+github "s2mr/Elephant"
 ```
 
 ```bash
@@ -113,4 +122,4 @@ $ carthage update --platform ios
 Elephant is available under the Apache v2. See the LICENSE file for more info.
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkzumu%2FElephant.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkzumu%2FElephant?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%s2mr%2FElephant.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fs2mr%2FElephant?ref=badge_large)
