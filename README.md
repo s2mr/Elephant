@@ -76,16 +76,34 @@ class ViewController: UIViewController {
 
 ### Show in SwiftUI
 
-SwiftUI support is available on iOS 13.0 and later.
+SwiftUI support is available on iOS 14.0 and later.
 
 ```swift
 import SwiftUI
 import Elephant
 
 struct ContentView: View {
+    @StateObject private var controller = AnimatedSVGViewController()
+
     var body: some View {
-        AnimatedSVGView(named: "image", animationOwner: .svg)
+        VStack {
+            AnimatedSVGView(
+                named: "image",
+                animationOwner: .svg,
+                controller: controller
+            )
             .frame(width: 240, height: 240)
+
+            HStack {
+                Button("Play") {
+                    controller.startAnimation()
+                }
+
+                Button("Pause") {
+                    controller.stopAnimation()
+                }
+            }
+        }
     }
 }
 ```
@@ -93,7 +111,7 @@ struct ContentView: View {
 ## Requirements
 - Xcode 26.4
 - Swift 6.0 package tools
-- iOS 12.0+
+- iOS 14.0+
 
 ## Installation
 
