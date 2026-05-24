@@ -18,6 +18,16 @@ public class SVGView: UIView, WKNavigationDelegate {
 
         setup()
     }
+
+    @objc(initWithName:animationOwner:)
+    public convenience init?(objcNamed named: String, animationOwner: AnimationOwner) {
+        self.init(named: named, animationOwner: animationOwner, style: .default, bundle: .main)
+    }
+
+    @objc(initWithName:animationOwner:bundle:)
+    public convenience init?(objcNamed named: String, animationOwner: AnimationOwner, bundle: Bundle) {
+        self.init(named: named, animationOwner: animationOwner, style: .default, bundle: bundle)
+    }
     
     public init?(fileURL: URL, animationOwner: AnimationOwner, style: SVGLoader.Style? = .default) {
         let style = style ?? SVGLoader.Style(rawCSS: "")
@@ -30,6 +40,11 @@ public class SVGView: UIView, WKNavigationDelegate {
         super.init(frame: .zero)
         
         setup()
+    }
+
+    @objc(initWithFileURL:animationOwner:)
+    public convenience init?(objcFileURL fileURL: URL, animationOwner: AnimationOwner) {
+        self.init(fileURL: fileURL, animationOwner: animationOwner, style: .default)
     }
 
     required init?(coder: NSCoder) {
@@ -64,6 +79,13 @@ public class SVGView: UIView, WKNavigationDelegate {
         }
     }
 
+    @objc(isAnimatingWithResult:)
+    public func isAnimating(result: @escaping (NSNumber?, NSError?) -> Void) {
+        isAnimate { value, error in
+            result(value.map(NSNumber.init(value:)), error as NSError?)
+        }
+    }
+
     private func isAnimateSVG(result: @escaping (Bool?, Error?) -> Void) {
         executor.execute(javaScriptCommand: .isAnimateSVG) { (value, error) in
             guard let value = value as? NSNumber, let bool = Bool(exactly: value) else { result(nil, error); return }
@@ -91,6 +113,11 @@ public class SVGView: UIView, WKNavigationDelegate {
         }
     }
 
+    @objc
+    public func startAnimation() {
+        startAnimation(result: nil)
+    }
+
     public func stopAnimation(result: ((Error?) -> Void)? = nil) {
         switch loader.animationOwner {
         case .css:
@@ -102,6 +129,11 @@ public class SVGView: UIView, WKNavigationDelegate {
                 result?(e)
             }
         }
+    }
+
+    @objc
+    public func stopAnimation() {
+        stopAnimation(result: nil)
     }
 
     // MARK: - WKNavigationDelegate
