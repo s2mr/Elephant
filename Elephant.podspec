@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Elephant'
   s.swift_version    = '5.7'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'SVG animation kit for iOS'
   s.description      = <<-DESC
 You can display the elegant svg animation in app.
