@@ -74,6 +74,22 @@ class ViewController: UIViewController {
 
 ```
 
+### Show in SwiftUI
+
+SwiftUI support is available on iOS 13.0 and later.
+
+```swift
+import SwiftUI
+import Elephant
+
+struct ContentView: View {
+    var body: some View {
+        AnimatedSVGView(named: "image", animationOwner: .svg)
+            .frame(width: 240, height: 240)
+    }
+}
+```
+
 ## Requirements
 - Xcode 26.4
 - Swift 6.0 package tools
