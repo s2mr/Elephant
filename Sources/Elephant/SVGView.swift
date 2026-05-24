@@ -54,7 +54,7 @@ public class SVGView: UIView, WKNavigationDelegate {
         webView.scrollView.backgroundColor = UIColor.clear
         webView.scrollView.isScrollEnabled = false
         
-        webView.loadHTMLString(loader.html, baseURL: nil)
+        webView.loadHTMLString(loader.html, baseURL: URL(string: "about:blank"))
     }
 
     public func isAnimate(result: @escaping (Bool?, Error?) -> Void) {
