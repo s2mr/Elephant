@@ -1,11 +1,11 @@
-// swift-tools-version:5.5
+// swift-tools-version:6.0
 
 import PackageDescription
 
 let package = Package(
     name: "Elephant",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(name: "Elephant", targets: ["Elephant"]),
@@ -13,5 +13,6 @@ let package = Package(
     targets: [
         .target(name: "Elephant"),
         .testTarget(name: "ElephantTests", dependencies: ["Elephant"]),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )

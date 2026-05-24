@@ -3,10 +3,9 @@
 <p align="center"><strong>This is SVG animation presentation kit for iOS.</strong></p>
 
 <p align="center">
-<a href="https://developer.apple.com/swift"><img alt="Swift5" src="https://img.shields.io/badge/language-Swift5-orange.svg"/></a>
+<a href="https://developer.apple.com/swift"><img alt="Swift" src="https://img.shields.io/badge/language-Swift-orange.svg"/></a>
 <a href="https://github.com/s2mr/Elephant/releases/latest"><img alt="Release" src="https://img.shields.io/github/release/s2mr/Elephant.svg"/></a>
-<a href="https://cocoapods.org/pods/Carbon"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/Elephant.svg"/></a>
-<a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/carthage-compatible-yellow.svg"/></a>
+<a href="https://cocoapods.org/pods/Elephant"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/Elephant.svg"/></a>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fkzumu%2FElephant?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkzumu%2FElephant.svg?type=shield"/></a>
 </br>
 <a href="https://developer.apple.com/"><img alt="Platform" src="https://img.shields.io/badge/platform-iOS-green.svg"/></a>
@@ -14,7 +13,7 @@
 </p>
 
 ## Example
-You can run example app. Please open `Example-iOS/Elephant-iOS.xcworkspace`!
+You can run the example app from `Examples/iOS/Example-iOS.xcodeproj`.
 
 <img src="https://github.com/s2mr/Elephant/raw/resources/Resources/demo.gif" width="300" align="center"/>
 
@@ -76,8 +75,9 @@ class ViewController: UIViewController {
 ```
 
 ## Requirements
-- Xcode 10.2
-- Swift 5.0
+- Xcode 26.4
+- Swift 6.0 package tools
+- iOS 12.0+
 
 ## Installation
 
@@ -100,17 +100,6 @@ pod 'Elephant'
 
 ```bash
 $ pod install
-```
-
-### [Carthage](https://github.com/Carthage/Carthage)
-Add this to `Cartfile`
-
-```
-github "s2mr/Elephant"
-```
-
-```bash
-$ carthage update --platform ios
 ```
 
 ## Author
