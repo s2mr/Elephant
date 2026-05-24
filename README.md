@@ -123,3 +123,13 @@ Elephant is available under the Apache v2. See the LICENSE file for more info.
 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%s2mr%2FElephant.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fs2mr%2FElephant?ref=badge_large)
+
+## Star History
+
+<a href="https://www.star-history.com/#s2mr/Elephant&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=s2mr/Elephant&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=s2mr/Elephant&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=s2mr/Elephant&type=Date" />
+  </picture>
+</a>
